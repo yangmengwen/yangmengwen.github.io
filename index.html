@@ -247,6 +247,141 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/action-log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/01/action-log/" itemprop="url">
+                  action-log
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-01T09:48:38+08:00">
+                2017-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>有时候为了统计网站点击转化率，需要记录用户在页面的行为生成用户行为日志。</p>
+<h3 id="日志参数"><a href="#日志参数" class="headerlink" title="日志参数"></a>日志参数</h3><p>事件类型 （event_type）<br>事件名称 （event_name）<br>页面分类  (categeory)<br>是否可跳过该步骤 （is_jump）<br>页面埋点(page_referrer)</p>
+<h3 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数"></a>创建函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="built_in">window</span>.userAction = <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</div><div class="line">&gt;   api.post(&#123;</div><div class="line">&gt;       url:自定义,</div><div class="line">&gt;       data: 日志参数</div><div class="line">&gt; &#125;)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="写起来费劲不"><a href="#写起来费劲不" class="headerlink" title="写起来费劲不"></a>写起来费劲不</h3><blockquote>
+<p>由于每个页面都都有对应的事件，如点击、加载事件，而我们需要通过触发该事件来生成行为日志，因此需要挂载到某个标签上，那么问题来了，每一个页面都要添加一大长串的参数，修改起来很麻烦，嗯！麻烦就对了</p>
+</blockquote>
+<h3 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h3><blockquote>
+<p>懒病犯了，不想每次都balabala一大堆参数，于是在高人的指点下封装了一下函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="built_in">window</span>.userActionByType = <span class="function"><span class="keyword">function</span>(<span class="params">eventType, 可选参数<span class="number">1</span>, 可选参数<span class="number">2</span></span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">switch</span> (eventType) &#123;</div><div class="line">&gt;       <span class="keyword">case</span> <span class="string">'eventType'</span>:</div><div class="line">&gt;           <span class="built_in">window</span>.userAction([日志参数]) <span class="comment">// 各个参数用引号引起来，逗号隔开</span></div><div class="line">&gt;           <span class="keyword">break</span>;</div><div class="line">&gt;  &#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>上述函数里的case 列举出每个需要记录日志的参数，封装之后只需要传入事件类型即可（可选参数根据实际情况添加），是不是变简单了呢</p>
+</blockquote>
+<h3 id="页面跳转日志无法记录怎么办"><a href="#页面跳转日志无法记录怎么办" class="headerlink" title="页面跳转日志无法记录怎么办"></a>页面跳转日志无法记录怎么办</h3><blockquote>
+<p>当页面发生跳转时，你的数据还没有post出去页面已经跳转了，怎么办呢？那就种个cookie，因为发送请求时cookie会被带到跳转的页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="built_in">window</span>.userAction = <span class="function"><span class="keyword">function</span> (<span class="params">action, isjumpPage</span>) </span>&#123; <span class="comment">// 添加一个判断页面是否跳转的参数isjumpPage</span></div><div class="line">&gt;   <span class="keyword">if</span> （isjumpPage）&#123;</div><div class="line">&gt;       setCookie(); <span class="comment">// 调用setcookie()种cookie</span></div><div class="line">&gt;   &#125;</div><div class="line">&gt;   api.post(&#123;</div><div class="line">&gt;       <span class="comment">// cookie种成功后发送post请求</span></div><div class="line">&gt;   &#125;).done(&#123;</div><div class="line">&gt;       deleteCookie(); <span class="comment">//删除cookie防止多次发送请求</span></div><div class="line">&gt;  &#125;)</div><div class="line">&gt; &#125;</div><div class="line">&gt; <span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> jumpPageAction = getcookie(); <span class="comment">// 拿到cookie,注意这里拿到的是字符串需要转化为json数据</span></div><div class="line">&gt;   <span class="keyword">if</span> (jumpPageAction) &#123;</div><div class="line">&gt;       <span class="built_in">window</span>.userAction(jumpPageAction);</div><div class="line">&gt;   &#125;</div><div class="line">&gt; &#125;)</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -532,7 +667,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -540,6 +675,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
           
 
         </nav>

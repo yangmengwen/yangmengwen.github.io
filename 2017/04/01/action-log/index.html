@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="to record users action," />
 
 
 
@@ -87,19 +87,25 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="背景
+有时候为了统计网站点击转化率，需要记录用户在页面的行为生成用户行为日志。
+日志参数事件类型 （event_type）事件名称 （event_name）页面分类  (categeory)是否可跳过该步骤 （is_jump）页面埋点(page_referrer)
+创建函数123456&amp;gt; window.userAction = function (action) &amp;#123;&amp;gt;   a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/03/31/hello-world/index.html">
+<meta property="og:title" content="action-log">
+<meta property="og:url" content="http://yoursite.com/2017/04/01/action-log/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-03-31T06:37:24.000Z">
+<meta property="og:description" content="背景
+有时候为了统计网站点击转化率，需要记录用户在页面的行为生成用户行为日志。
+日志参数事件类型 （event_type）事件名称 （event_name）页面分类  (categeory)是否可跳过该步骤 （is_jump）页面埋点(page_referrer)
+创建函数123456&amp;gt; window.userAction = function (action) &amp;#123;&amp;gt;   a">
+<meta property="og:updated_time" content="2017-04-01T03:13:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="action-log">
+<meta name="twitter:description" content="背景
+有时候为了统计网站点击转化率，需要记录用户在页面的行为生成用户行为日志。
+日志参数事件类型 （event_type）事件名称 （event_name）页面分类  (categeory)是否可跳过该步骤 （is_jump）页面埋点(page_referrer)
+创建函数123456&amp;gt; window.userAction = function (action) &amp;#123;&amp;gt;   a">
 
 
 
@@ -127,13 +133,13 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/31/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/01/action-log/"/>
 
 
 
 
 
-  <title> Hello World | Hexo </title>
+  <title> action-log | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -252,7 +258,7 @@ Quick">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/action-log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -273,7 +279,7 @@ Quick">
             
             
               
-                Hello World
+                action-log
               
             
           </h1>
@@ -288,8 +294,8 @@ Quick">
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-31T14:37:24+08:00">
-                2017-03-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-01T09:48:38+08:00">
+                2017-04-01
               </time>
             
 
@@ -324,15 +330,21 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><blockquote>
+<p>有时候为了统计网站点击转化率，需要记录用户在页面的行为生成用户行为日志。</p>
+<h3 id="日志参数"><a href="#日志参数" class="headerlink" title="日志参数"></a>日志参数</h3><p>事件类型 （event_type）<br>事件名称 （event_name）<br>页面分类  (categeory)<br>是否可跳过该步骤 （is_jump）<br>页面埋点(page_referrer)</p>
+<h3 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数"></a>创建函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="built_in">window</span>.userAction = <span class="function"><span class="keyword">function</span> (<span class="params">action</span>) </span>&#123;</div><div class="line">&gt;   api.post(&#123;</div><div class="line">&gt;       url:自定义,</div><div class="line">&gt;       data: 日志参数</div><div class="line">&gt; &#125;)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="写起来费劲不"><a href="#写起来费劲不" class="headerlink" title="写起来费劲不"></a>写起来费劲不</h3><blockquote>
+<p>由于每个页面都都有对应的事件，如点击、加载事件，而我们需要通过触发该事件来生成行为日志，因此需要挂载到某个标签上，那么问题来了，每一个页面都要添加一大长串的参数，修改起来很麻烦，嗯！麻烦就对了</p>
+</blockquote>
+<h3 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h3><blockquote>
+<p>懒病犯了，不想每次都balabala一大堆参数，于是在高人的指点下封装了一下函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="built_in">window</span>.userActionByType = <span class="function"><span class="keyword">function</span>(<span class="params">eventType, 可选参数<span class="number">1</span>, 可选参数<span class="number">2</span></span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">switch</span> (eventType) &#123;</div><div class="line">&gt;       <span class="keyword">case</span> <span class="string">'eventType'</span>:</div><div class="line">&gt;           <span class="built_in">window</span>.userAction([日志参数]) <span class="comment">// 各个参数用引号引起来，逗号隔开</span></div><div class="line">&gt;           <span class="keyword">break</span>;</div><div class="line">&gt;  &#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>上述函数里的case 列举出每个需要记录日志的参数，封装之后只需要传入事件类型即可（可选参数根据实际情况添加），是不是变简单了呢</p>
+</blockquote>
+<h3 id="页面跳转日志无法记录怎么办"><a href="#页面跳转日志无法记录怎么办" class="headerlink" title="页面跳转日志无法记录怎么办"></a>页面跳转日志无法记录怎么办</h3><blockquote>
+<p>当页面发生跳转时，你的数据还没有post出去页面已经跳转了，怎么办呢？那就种个cookie，因为发送请求时cookie会被带到跳转的页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="built_in">window</span>.userAction = <span class="function"><span class="keyword">function</span> (<span class="params">action, isjumpPage</span>) </span>&#123; <span class="comment">// 添加一个判断页面是否跳转的参数isjumpPage</span></div><div class="line">&gt;   <span class="keyword">if</span> （isjumpPage）&#123;</div><div class="line">&gt;       setCookie(); <span class="comment">// 调用setcookie()种cookie</span></div><div class="line">&gt;   &#125;</div><div class="line">&gt;   api.post(&#123;</div><div class="line">&gt;       <span class="comment">// cookie种成功后发送post请求</span></div><div class="line">&gt;   &#125;).done(&#123;</div><div class="line">&gt;       deleteCookie(); <span class="comment">//删除cookie防止多次发送请求</span></div><div class="line">&gt;  &#125;)</div><div class="line">&gt; &#125;</div><div class="line">&gt; <span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> jumpPageAction = getcookie(); <span class="comment">// 拿到cookie,注意这里拿到的是字符串需要转化为json数据</span></div><div class="line">&gt;   <span class="keyword">if</span> (jumpPageAction) &#123;</div><div class="line">&gt;       <span class="built_in">window</span>.userAction(jumpPageAction);</div><div class="line">&gt;   &#125;</div><div class="line">&gt; &#125;)</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
 
       
     </div>
@@ -360,6 +372,12 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/to-record-users-action/" rel="tag"># to record users action</a>
+          
+        </div>
+      
 
       
         
@@ -369,15 +387,15 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/31/测试/" rel="next" title="测试">
+                <i class="fa fa-chevron-left"></i> 测试
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/31/测试/" rel="prev" title="测试">
-                测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -497,7 +515,7 @@ Quick">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志参数"><span class="nav-number">2.</span> <span class="nav-text">日志参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建函数"><span class="nav-number">3.</span> <span class="nav-text">创建函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写起来费劲不"><span class="nav-number">4.</span> <span class="nav-text">写起来费劲不</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装函数"><span class="nav-number">5.</span> <span class="nav-text">封装函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面跳转日志无法记录怎么办"><span class="nav-number">6.</span> <span class="nav-text">页面跳转日志无法记录怎么办</span></a></li></ol></div>
             
 
           </div>
