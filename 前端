@@ -1,0 +1,29 @@
+## cookie、localstorage、sessionstorage
+> cookie存储在浏览器端，并随着浏览器请求被带到服务器端
+> 具有一定的存储时间限制，最大存储大小为4k
+### localstorage
+> 存储在客户端，永久存储，只要用户不删除就会一直存在
+### seessionstorage
+> sessionstorage也存储在客户端，当前窗口不关闭时存在，关闭则消失
+
+## 闭包
+> 闭包是能访问外部函数变量的函数，将定义在函数中的函数作为返回值
+```html
+  function a (x) {
+    var i = 2;
+    function b (y) {
+      console.log(y+i);
+    }
+    return b;
+  }
+```
+### 闭包的优缺点
+> 优点：隔离作用域
+```html
+  for(var i=0;i<2;i++) {
+    function (i) {
+      console.log(i);
+    }
+  }
+```
+> 缺点：外部函数可以访问内部函数的变量，导致变量无法释放，造成内存占用过大
